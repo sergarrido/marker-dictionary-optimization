@@ -1,0 +1,14 @@
+# build artifacts
+build/
+
+# third-party prebuilt binaries (OR-Tools; download per README)
+third_party/
+
+# python cache
+__pycache__/
+*.pyc
+
+# experiment outputs (regenerable); keep the scripts under paper_results/
+paper_results/*/
+!paper_results/plots/
+paper_results/plots/figures/
