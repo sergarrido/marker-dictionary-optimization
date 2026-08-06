@@ -88,11 +88,20 @@ This writes `dist_stats.txt` and `times_stats.txt` in that folder.
 
 ## Generating the paper figures
 
-Once the methods have been run, the figures are produced by the scripts in
-`paper_results/plots/`, reading the results directly from `paper_results/`:
+Recommended first: recompute every `dist.txt` straight from the dictionaries, so
+the figures never rely on a stale or partially-written `dist.txt` (needs
+`build/mindistances`):
 
 ```sh
-cd paper_results/plots
+cd paper_results
+./recompute_distances.sh .        # rebuilds run*/dist.txt from the .set files
+```
+
+Then produce the figures with the scripts in `paper_results/plots/`, which read
+the results directly from `paper_results/`:
+
+```sh
+cd plots
 ./generate_all.sh
 ```
 

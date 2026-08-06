@@ -5,6 +5,7 @@ each as its own figure (combined side by side in the paper). Data from
 paper_results/proposed_optimal/{3x3,4x4}/run*/{dist.txt,times.txt}."""
 import os
 import matplotlib.pyplot as plt
+from matplotlib.ticker import LogLocator
 from _common import LINEWIDTH, FIGS, load_metric
 
 SERIES = [(3, r"$3\times3$", "-"), (4, r"$4\times4$", "--")]
@@ -31,7 +32,13 @@ def panel(metric, ylabel, out, ylim_top=None, logy=False):
         plt.ylim(top=ylim_top)
     if logy:
         plt.yscale("log")
-    plt.grid(True, alpha=0.3)
+        # force the log minor gridlines even over a wide (many-decade) range
+        plt.gca().yaxis.set_minor_locator(
+            LogLocator(base=10.0, subs=(2, 3, 4, 5, 6, 7, 8, 9), numticks=100))
+        plt.grid(True, which="major", alpha=0.3)
+        plt.grid(True, which="minor", alpha=0.15)
+    else:
+        plt.grid(True, alpha=0.3)
     plt.legend()
     plt.tight_layout()
     plt.savefig(os.path.join(FIGS, out), dpi=300)
@@ -42,7 +49,7 @@ def panel(metric, ylabel, out, ylim_top=None, logy=False):
 def main():
     os.makedirs(FIGS, exist_ok=True)
     panel("dist", r"Inter-marker distance $\tau$", "opt_dist_combined.png", ylim_top=12)
-    panel("times", "Generation time (s)", "opt_time_combined.png")
+    panel("times", "Generation time (s)", "opt_time_combined.png", logy=True)
 
 
 if __name__ == "__main__":
