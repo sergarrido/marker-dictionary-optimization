@@ -1,0 +1,4 @@
+startingpoint@startingpoint-Seabery:~/papers/optimal_mip/code2$ ps -p 2995814 -o pid,lstart,etime,cmd
+    PID                  STARTED     ELAPSED CMD
+2995814 Wed Jul 29 21:03:59 2026  7-00:49:06 ../build/proposed_optimal --n 4 --target 500 --timelimit 100000000 --out-prefix proposed_optimal/4x4/run1/dict --times proposed_optimal/4x4/run1/times.txt
+

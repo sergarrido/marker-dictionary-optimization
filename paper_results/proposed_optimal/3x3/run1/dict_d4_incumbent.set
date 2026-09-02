@@ -1,0 +1,8 @@
+%YAML:1.0
+---
+nmarkers: 4
+markersize: 3
+marker_0: "101111000"
+marker_1: "111001100"
+marker_2: "111100010"
+marker_3: "011110100"
