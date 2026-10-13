@@ -109,9 +109,11 @@ Figures are written to `paper_results/plots/figures/`:
 
 - `dist_<NxN>.png` — inter-marker distance vs dictionary size, one curve per method
 - `time_<NxN>.png` — generation time vs dictionary size
+- `std_combined.png` — std of the inter-marker distance across runs (run-to-run variation)
 - `opt_dist_combined.png`, `opt_time_combined.png` — proposed optimal method (3×3, 4×4)
 - `timelimit_dist_6x6.png`, `timelimit_time_6x6.png` — effect of the per-solve time
   limit on the proposed suboptimal method (6×6).
 
 Each script can also be run on its own (`plot_distance.py`, `plot_time.py`,
-`plot_optimal.py`, `plot_timelimit.py`). Marker sizes with no data are skipped.
+`plot_std.py`, `plot_optimal.py`, `plot_timelimit.py`). Marker sizes with no data
+are skipped.

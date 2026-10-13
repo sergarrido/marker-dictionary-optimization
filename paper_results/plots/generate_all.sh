@@ -5,5 +5,6 @@
 cd "$(dirname "$0")"
 python3 plot_distance.py
 python3 plot_time.py
+python3 plot_std.py
 python3 plot_optimal.py
 python3 plot_timelimit.py
