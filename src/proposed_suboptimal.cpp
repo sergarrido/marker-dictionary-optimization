@@ -162,7 +162,10 @@ static int packOneMarker(const Dictionary& MS, int N, int d, double timeLimit,
     }
   }
 
-  model.Minimize(objective);
+  // Compact-packing objective: minimize the sum of distances so the new marker is
+  // placed as compactly as possible. Setting FEASIBLE_ONLY=1 skips it, so the
+  // solver instead returns any feasible marker.
+  if (!std::getenv("FEASIBLE_ONLY")) model.Minimize(objective);
 
   SatParameters params;
   params.set_max_time_in_seconds(timeLimit);
