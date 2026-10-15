@@ -8,3 +8,5 @@ python3 plot_time.py
 python3 plot_std.py
 python3 plot_optimal.py
 python3 plot_timelimit.py
+python3 plot_ablation.py
+python3 plot_complexity.py

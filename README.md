@@ -69,6 +69,7 @@ cd paper_results
 ./run_aruco2014.sh
 ./run_apriltag2011.sh
 ./run_proposed_optimal.sh          # exact optimum, only 3x3/4x4, huge time limit
+./run_proposed_suboptimal_feasible.sh  # ablation: compact-packing objective disabled
 ```
 
 Each run writes into `paper_results/<method>/<NxN>/run<k>/`:
@@ -109,11 +110,13 @@ Figures are written to `paper_results/plots/figures/`:
 
 - `dist_<NxN>.png` — inter-marker distance vs dictionary size, one curve per method
 - `time_<NxN>.png` — generation time vs dictionary size
-- `std_combined.png` — std of the inter-marker distance across runs (run-to-run variation)
+- `std_<NxN>.png` — std of the inter-marker distance across runs (run-to-run variation)
 - `opt_dist_combined.png`, `opt_time_combined.png` — proposed optimal method (3×3, 4×4)
 - `timelimit_dist_6x6.png`, `timelimit_time_6x6.png` — effect of the per-solve time
   limit on the proposed suboptimal method (6×6).
+- `ablation_dist_<NxN>.png` — ablation of the compact-packing objective
+- `complexity_combined.png` — per-method bit-transition rate of the generated markers
 
 Each script can also be run on its own (`plot_distance.py`, `plot_time.py`,
-`plot_std.py`, `plot_optimal.py`, `plot_timelimit.py`). Marker sizes with no data
-are skipped.
+`plot_std.py`, `plot_optimal.py`, `plot_timelimit.py`, `plot_ablation.py`,
+`plot_complexity.py`). Marker sizes with no data are skipped.
