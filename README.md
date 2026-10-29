@@ -1,7 +1,7 @@
 # Square Fiducial Marker Dictionary Generation
 
-Code accompanying the paper *"Maximizing Inter-Marker Distance in Square Fiducial
-Marker Dictionary Generation"*.
+Code accompanying the paper *["Maximizing Inter-Marker Distance in Square Fiducial
+Marker Dictionary Generation"](https://doi.org/10.3390/jimaging12110538)* (see citation information at the end).
 
 It generates square marker dictionaries with several methods and measures their
 inter-marker distance and generation time, so they can be compared. Two proposed
@@ -120,3 +120,26 @@ Figures are written to `paper_results/plots/figures/`:
 Each script can also be run on its own (`plot_distance.py`, `plot_time.py`,
 `plot_std.py`, `plot_optimal.py`, `plot_timelimit.py`, `plot_ablation.py`,
 `plot_complexity.py`). Marker sizes with no data are skipped.
+
+## Citation
+
+If you use this code in your research, please cite the following paper:
+
+Quesada Conejero V, Muñoz-Salinas R, Romero-Ramirez FJ, Garrido-Jurado S. Maximizing Inter-Marker Distance in Square Fiducial Marker Dictionary Generation. Journal of Imaging. 2026; 12(11):538. https://doi.org/10.3390/jimaging12110538
+
+```
+@Article{jimaging12110538,
+AUTHOR = {Quesada Conejero, Víctor and Muñoz-Salinas, Rafael and Romero-Ramirez, Francisco J. and Garrido-Jurado, Sergio},
+TITLE = {Maximizing Inter-Marker Distance in Square Fiducial Marker Dictionary Generation},
+JOURNAL = {Journal of Imaging},
+VOLUME = {12},
+YEAR = {2026},
+NUMBER = {11},
+ARTICLE-NUMBER = {538},
+URL = {https://www.mdpi.com/2313-433X/12/11/538},
+ISSN = {2313-433X},
+DOI = {10.3390/jimaging12110538}
+}
+```
+
+
